@@ -1,15 +1,20 @@
 <?php
-$host_name = 'db5013796053.hosting-data.io';
-$database = 'dbs11545287';
-$user_name = 'dbu180396';
-$password = 'S6Gk5wSQsq@qRbJ';
+// index.php
 
-$link = new mysqli($host_name, $user_name, $password, $database);
+// Define the base path for the React app (change this to match your setup)
+$reactAppBasePath = 'build';
 
-if ($link->connect_error) {
-    die('<p>Failed to connect to MySQL: ' . $link->connect_error . '</p>');
+// Get the requested URL
+$requestedUrl = $_SERVER['REQUEST_URI'];
+
+// Serve the requested file from the React app's build directory
+$file = $reactAppBasePath . $requestedUrl;
+
+// Check if the file exists, and if not, serve the main index.html file
+if (file_exists($file)) {
+    return false;
+    // echo "File has retrieved!";
 } else {
-    echo '<p>Connection to MySQL server successfully established.</p>';
+    include($reactAppBasePath . '/index.html');
 }
-// echo 'Hello World!'
 ?>
