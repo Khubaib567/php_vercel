@@ -2,10 +2,10 @@
 // index.php
 
 // Define the base path for the React app (change this to match your setup)
-$reactAppBasePath = 'build';
+// $reactAppBasePath = 'build';
 
 // Get the requested URL
-$requestedUrl = $_SERVER['REQUEST_URI'];
+// $requestedUrl = $_SERVER['REQUEST_URI'];
 
 // Serve the requested file from the React app's build directory
 $file = $reactAppBasePath . $requestedUrl;
@@ -15,6 +15,6 @@ if (file_exists($file)) {
     return false;
     // echo "File has retrieved!";
 } else {
-    include($reactAppBasePath . '/index.html');
+    include('build\index.html');
 }
 ?>
