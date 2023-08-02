@@ -1,4 +1,4 @@
 <?php
 // index.php
-include './build/index.html'
-    ?>
+require('./build/index.html');
+?>
